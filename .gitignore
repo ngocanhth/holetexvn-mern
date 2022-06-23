@@ -1,0 +1,21 @@
+server/node_modules
+server/dist
+.DS_Store
+dist
+dist-ssr
+*.local
+
+node_modules
+.env
+server/.env
+
+#Hardhat files
+cache
+artifacts
+
+coverage
+.eslintcache
+.openzeppelin/*.json
+
+mern-app-client/
+mern-app-server/
