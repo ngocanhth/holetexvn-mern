@@ -19,3 +19,5 @@ coverage
 
 mern-app-client/
 mern-app-server/
+
+client/node_modules
