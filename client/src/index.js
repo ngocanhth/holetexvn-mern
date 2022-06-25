@@ -8,6 +8,8 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './redux/reducers';
 import mySaga from './redux/sagas';
+import { ThemeProvider } from "@mui/material/styles"
+import theme from "./theme"
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -17,9 +19,13 @@ sagaMiddleware.run(mySaga);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ThemeProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

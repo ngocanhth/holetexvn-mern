@@ -23,6 +23,7 @@ export const getPosts = createActions({
 
 // {
 //     type: getPostsSucces,
+//     isLoading: false,
 //     payload: {
 //         name: 'Test',
 //         content: 'gdgdgs'
