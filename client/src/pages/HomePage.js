@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Container, Box } from '@mui/system';
 import { Button, Link, Typography } from '@mui/material';
 import GlobalStyles from '@mui/material/GlobalStyles';
+import { PrimayButton, SecondaryButton } from '../styleguides/button';
 
 
 // import Header from '../components/Header';
@@ -43,6 +44,12 @@ export default function HomePage() {
       <Typography color='blue'>Test Typography</Typography>
       <Typography >Lorem Ipsum is simply dummy te</Typography>
       <Link href="#">Link</Link>
+      <Box sx={{mt: 5}}>
+        <Button variant="primary" disableRipple>Button Default</Button>
+        <Button variant="secondary">Button Default</Button>
+        <Button variant="hollow" disableRipple>Button Default</Button>
+        <Button variant="disabled" disabled={true}>Button Default</Button>
+      </Box>
     </Container>
 
   );
