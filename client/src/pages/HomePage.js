@@ -20,7 +20,8 @@ export default function HomePage() {
   return (
     <Container
       maxWidth='md'
-      sx={{ px: 3 }}
+      // sx={{ px: {sm: 6} }}
+       sx={{px:{sm: 7} }}
       disableGutters={true}
 
     >

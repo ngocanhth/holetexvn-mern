@@ -90,8 +90,16 @@ let theme = createTheme({
         MuiContainer: {
             styleOverrides: {
                 root: {
-                    paddingLeft: '20px',
-                    paddingRight: '20px',
+                    paddingLeft: '16px',
+                    paddingRight: '16px',
+                    '@media (min-width:640px)': {
+                        paddingLeft: '24px',
+                        paddingRight: '24px',
+                    },
+                    '@media (min-width:768px)': {
+                        paddingLeft: '24px',
+                        paddingRight: '24px',
+                    },
                 },
                 disableGutters: true
 
