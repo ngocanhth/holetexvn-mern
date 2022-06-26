@@ -1,5 +1,6 @@
 import { green, purple } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles"
+import "@fontsource/lato";
 
 let theme = createTheme({
     palette: {
@@ -23,11 +24,52 @@ let theme = createTheme({
             active: '#001E3C',
         },
     },
+    typography: {
+        allVariants: {
+            fontFamily: [
+                'Lato',
+                'Roboto',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                '"Helvetica Neue"',
+                'Arial',
+                'sans-serif',
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+            ].join(','),
+            fontSize: 14,
+        },
+        h2: {
+            fontFamily: 'Roboto',
+        }
+
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@global': {
+                '@font-face': [
+                    'Lato',
+                    'Roboto',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    '"Segoe UI"',
+                    '"Helvetica Neue"',
+                    'Arial',
+                    'sans-serif',
+                    '"Apple Color Emoji"',
+                    '"Segoe UI Emoji"',
+                    '"Segoe UI Symbol"',
+                ].join(','),
+            },
+        }
+    },
     breakpoints: {
         values: {
             xs: 0,
             xsm: 450,
-            sm: 600,
+            sm: 640,
             md: 900,
             lg: 1200,
             lg1280: 1280,
@@ -62,21 +104,34 @@ let theme = createTheme({
                 // }
             }
         },
+        // MuiButton: {
+        //     styleOverrides: {
+        //         // Name of the slot
+        //         root: {
+        //             // Some CSS
+        //             fontSize: '20px',
+        //             padding: '10px 20px',
+        //             backgroundColor: 'blue',
+        //             color: '#fff',
+        //             '&:hover': {
+        //                 backgroundColor: 'blue',
+        //                 color: '#fff',
+        //             }
+        //         }
+
+
+        //     },
+        // },
         MuiButton: {
             styleOverrides: {
-                // Name of the slot
-                root: {
-                    // Some CSS
-                    fontSize: '20px',
-                    padding: '10px 20px',
-                    backgroundColor: 'blue',
-                    color: '#fff',
-                    '&$hover': {
-                        backgroundColor: 'blue',
+                root: ({ ownerState }) => ({
+                    ...(ownerState.variant === 'contained' &&
+                        ownerState.color === 'primary' && {
+                        backgroundColor: '#202020',
                         color: '#fff',
-                    }
-                }
-
+                        padding: '10px 20px',
+                    }),
+                }),
             },
         },
     },

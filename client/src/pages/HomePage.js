@@ -1,7 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Container, Box } from '@mui/system';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
+import GlobalStyles from '@mui/material/GlobalStyles';
+
 
 // import Header from '../components/Header';
 // import PostList from '../components/PostList';
@@ -31,8 +33,14 @@ export default function HomePage() {
       >
         <AddIcon />
       </Fab> */}
-      <Box>gdgdg</Box>
-      <Button>ghdhdhd</Button>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <Typography component="p" paragraph={true} >Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Typography>
+      <Box>Box</Box>
+      <Button>button</Button>
+      <h4>test responsie h4</h4>
+      <Typography variant='h2'>Font Roboto</Typography>
+      <Typography color='blue'>Test Typography</Typography>
+      <Typography >Lorem Ipsum is simply dummy te</Typography>
     </Container>
 
   );
