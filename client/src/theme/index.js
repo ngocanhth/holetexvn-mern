@@ -92,6 +92,7 @@ let theme = createTheme({
                 root: {
                     paddingLeft: '16px',
                     paddingRight: '16px',
+                    backgroundColor: '#fff',
                     '@media (min-width:640px)': {
                         paddingLeft: '24px',
                         paddingRight: '24px',
@@ -112,6 +113,33 @@ let theme = createTheme({
                 // }
             }
         },
+        
+        MuiLink: {
+            defaultProps: {
+                underline: 'hover'
+            },
+
+            styleOverrides: {
+                root: {
+                    fontSize: '20px',
+                    padding: '10px 20px',
+                    backgroundColor: 'blue',
+                    color: '#fff',
+                    '&:hover': {
+                        backgroundColor: 'blue',
+                        color: 'red',
+                    }
+                }
+            }
+        },
+
+        MuiButtonBase: {
+                defaultProps: {
+                // The props to change the default for.
+                disableRipple: true, // No more ripple, on the whole application 💣!
+            },
+        },
+        
         // MuiButton: {
         //     styleOverrides: {
         //         // Name of the slot

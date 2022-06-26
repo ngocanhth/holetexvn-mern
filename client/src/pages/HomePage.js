@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Container, Box } from '@mui/system';
-import { Button, Typography } from '@mui/material';
+import { Button, Link, Typography } from '@mui/material';
 import GlobalStyles from '@mui/material/GlobalStyles';
 
 
@@ -42,6 +42,7 @@ export default function HomePage() {
       <Typography variant='h2'>Font Roboto</Typography>
       <Typography color='blue'>Test Typography</Typography>
       <Typography >Lorem Ipsum is simply dummy te</Typography>
+      <Link href="#">Link</Link>
     </Container>
 
   );
