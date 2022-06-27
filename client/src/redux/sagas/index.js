@@ -28,9 +28,33 @@ function* fetchPostsSaga(action) {
   }
 }
 
+function* createPostSaga(action) {
+  try {
+    const post = yield call(api.createPost,  action.payload);
+    console.log('Post: ', post);
+    yield put(actions.createPost.createPostSuccess(post.data));
+  } catch (error) {
+    console.error(error);
+    yield put(actions.createPost.createPostFailure(error));
+  }
+}
+
+function* updatePostSaga(action) {
+  try {
+    const post = yield call(api.updatePost,  action.payload);
+    console.log('Post Update: ', post);
+    yield put(actions.updatePost.updatePostSuccess(post.data));
+  } catch (error) {
+    console.error(error);
+    yield put(actions.createPost.updatePostFailure(error));
+  }
+}
+
 // takeLatest : trong th co nhieu action cung dispatch thi no se chi trigger cai action cuoi va khi hoan thanh cac action khac se bi cancel
 function* mySaga() {
   yield takeLatest(actions.getPosts.getPostsRequest, fetchPostsSaga);
+  yield takeLatest(actions.createPost.createPostRequest, createPostSaga);
+  yield takeLatest(actions.updatePost.updatePostRequest, updatePostSaga);
 }
 
 export default mySaga;

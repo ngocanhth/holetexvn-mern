@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { modalState$ } from '../../redux/selectors';
 import { createPost, hideModal } from '../../redux/actions';
 import { Button, Modal, TextareaAutosize, TextField } from '@mui/material';
+import { Box, Container } from '@mui/system';
 
 export default function CreatePostModal() {
   const [data, setData] = React.useState({
@@ -13,6 +14,8 @@ export default function CreatePostModal() {
   });
   const dispatch = useDispatch();
   const { isShow } = useSelector(modalState$);
+
+  console.log('isShow: ', isShow);
 
   const onClose = React.useCallback(() => {
     dispatch(hideModal());
@@ -24,6 +27,7 @@ export default function CreatePostModal() {
   }, [dispatch]);
 
   const onSubmit = React.useCallback(() => {
+    console.log('data: ', data);
     dispatch(createPost.createPostRequest(data));
     onClose();
   }, [data, dispatch, onClose]);
@@ -40,40 +44,39 @@ export default function CreatePostModal() {
           onChange={(e) => setData({ ...data, title: e.target.value })}
         />
         <TextareaAutosize
-
           rowsMin={10}
           rowsMax={15}
           placeholder='Content...'
           value={data.content}
           onChange={(e) => setData({ ...data, content: e.target.value })}
         />
-        <FileBase64
-          accept='image/*'
-          multiple={false}
-          type='file'
-          value={data.attachment}
-          onDone={({ base64 }) => setData({ ...data, attachment: base64 })}
-        />
-        <div>
+        <Box sx={{mt: {sm:2, lg: 4}}}>
+          <FileBase64
+            accept='image/*'
+            multiple={false}
+            type='file'
+            value={data.attachment}
+            onDone={({ base64 }) => setData({ ...data, attachment: base64 })}
+            sx={{height: '48px', width: '100%'}}
+          />
+        </Box>
+        <Box sx={{mt: 2}}>
           <Button
             variant='primary'
             color='primary'
             component='span'
-            fullWidth
             onClick={onSubmit}
           >
             Create
           </Button>
-        </div>
+        </Box>
       </form>
     </div>
   );
 
   return (
-    <div>
       <Modal open={isShow} onClose={onClose}>
         {body}
       </Modal>
-    </div>
   );
 }

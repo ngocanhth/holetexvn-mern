@@ -5,15 +5,16 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
+import { updatePost } from '../../../redux/actions';
 
 function Post({post}) {
     const dispatch = useDispatch();
 
-    // const onLikeBtnClick = useCallback(() => {
-    //     dispatch(
-    //       updatePost.updatePostRequest({ ...post, likeCount: post.likeCount + 1 })
-    //     );
-    //   }, [dispatch, post]);
+    const onLikeBtnClick = useCallback(() => {
+        dispatch(
+          updatePost.updatePostRequest({ ...post, likeCount: post.likeCount + 1 })
+        );
+      }, [dispatch, post]);
     
     return (
         <Card>
@@ -30,6 +31,7 @@ function Post({post}) {
             <CardMedia
             image={post.attachment || ''}
             title='Title'
+            sx={{height: '150px'}}
             />
             <CardContent>
             <Typography variant='h5' color='textPrimary'>
@@ -40,7 +42,7 @@ function Post({post}) {
             </Typography>
             </CardContent>
             <CardActions>
-            <IconButton onClick={{}}>
+            <IconButton onClick={onLikeBtnClick}>
                 <FavoriteIcon />
                 <Typography component='span' color='textSecondary'>
                 {`${post.likeCount} likes`}

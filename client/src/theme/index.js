@@ -131,33 +131,33 @@ let theme = createTheme({
         }
     },
 
-    components: {
-        // Name of the component
-        MuiButtonBase: {
-            defaultProps: {
-                // The props to change the default for.
-                disableRipple: true,
-            },
-        },
+    // components: {
+    //     // Name of the component
+    //     MuiButtonBase: {
+    //         defaultProps: {
+    //             // The props to change the default for.
+    //             disableRipple: true,
+    //         },
+    //     },
 
-        MuiLink: {
-            defaultProps: {
-                // The props to change the default for.
-                underline: 'hover',
-            },
-            styleOverrides: {
-                // Name of the slot
-                root: {
-                    // Some CSS
-                    fontSize: '1rem',
-                    textDecoration: 'none',
-                },
-                underlineHover: {
-                    'textDecorationColor': '#000'
-                }
-            },
-        },
-    },
+    //     MuiLink: {
+    //         defaultProps: {
+    //             // The props to change the default for.
+    //             underline: 'hover',
+    //         },
+    //         styleOverrides: {
+    //             // Name of the slot
+    //             root: {
+    //                 // Some CSS
+    //                 fontSize: '1rem',
+    //                 textDecoration: 'none',
+    //             },
+    //             underlineHover: {
+    //                 'textDecorationColor': '#000'
+    //             }
+    //         },
+    //     },
+    // },
 
     breakpoints: {
         values: {

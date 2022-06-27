@@ -1,9 +1,7 @@
+import { Breadcrumbs, Button, Link, Typography } from '@mui/material';
+import { Box, Container } from '@mui/system';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Container, Box } from '@mui/system';
-import { Breadcrumbs, Button, Link, Typography } from '@mui/material';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import { PrimayButton, SecondaryButton } from '../styleguides/button';
 
 
 // import Header from '../components/Header';
