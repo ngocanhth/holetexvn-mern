@@ -184,8 +184,17 @@ let theme = createTheme({
         MuiContainer: {
             styleOverrides: {
                 root: {
-                    paddingLeft: '20px',
-                    paddingRight: '20px',
+                    paddingLeft: '16px',
+                    paddingRight: '16px',
+                    backgroundColor: '#fff',
+                    '@media (min-width:640px)': {
+                        paddingLeft: '24px',
+                        paddingRight: '24px',
+                    },
+                    '@media (min-width:768px)': {
+                        paddingLeft: '24px',
+                        paddingRight: '24px',
+                    },
                 },
                 disableGutters: true
 
@@ -198,6 +207,33 @@ let theme = createTheme({
                 // }
             }
         },
+        
+        MuiLink: {
+            defaultProps: {
+                underline: 'hover'
+            },
+
+            styleOverrides: {
+                root: {
+                    fontWeight: 400,
+                    fontSize: 14,
+                    lineHeight: 22,
+                    textDecorationLine: 'underline',
+                    color: '#131313',
+                    '&:hover': {
+                        color: '#314CB4'
+                    }
+                }
+            }
+        },
+
+        MuiButtonBase: {
+                defaultProps: {
+                // The props to change the default for.
+                disableRipple: true, // No more ripple, on the whole application 💣!
+            },
+        },
+        
         // MuiButton: {
         //     styleOverrides: {
         //         // Name of the slot
@@ -217,13 +253,72 @@ let theme = createTheme({
         //     },
         // },
         MuiButton: {
+            variants: [
+                {
+                    props: { variant: 'primary' },
+                    style: {
+                        // border: `2px dashed grey${blue[500]}`,
+                        backgroundColor: '#131313',
+                        color: '#fff',
+                        fontWeight: 700,
+                        '&:hover, &:focus, &:active': {
+                            backgroundColor: '#323233',
+                            boxShadow: 'none',
+                        },
+                    },
+                },
+                {
+                    props: { variant: 'secondary' },
+                    style: {
+                        // border: `2px dashed grey${blue[500]}`,
+                        backgroundColor: '#F8485E',
+                        color: '#fff',
+                        fontWeight: 700,
+                        '&:hover, &:focus, &:active': {
+                            backgroundColor: '#FF7182',
+                            boxShadow: 'none',
+                        },
+                    },
+                },
+                {
+                    props: { variant: 'hollow' },
+                    style: {
+                        backgroundColor: '#fff',
+                        border: `1px solid #B0B0B0`,
+                        color: '#131313',
+                        fontWeight: 500,
+                        '&:hover, &:focus, &:active': {
+                            backgroundColor: '#323233',
+                            borderColor: '#323233',
+                            color: '#fff',
+                            fontWeight: 700,
+                        },
+                    },
+                },
+                {
+                    props: { variant: 'disabled' },
+                    style: {
+                        fontWeight: 500,
+                        color: '#B0B0B0',
+                        backgroundColor: '#E6E6E6',
+                    },
+                },
+            ],
             styleOverrides: {
                 root: ({ ownerState }) => ({
-                    ...(ownerState.variant === 'contained' &&
-                        ownerState.color === 'primary' && {
-                        backgroundColor: '#202020',
-                        color: '#fff',
-                        padding: '10px 20px',
+                    ...(
+                        // ownerState.variant === 'contained' &&
+                        // ownerState.color === 'primary' && 
+                        {
+                        fontFamily: '"Montserrat", sans-serif',
+                        fontSize: 14,
+                        lineHeight: 20,
+                        letterSpacing: '0.5px',
+                        padding: '14px 18px',
+                        borderRadius: '0',
+                        minWidth: '196px',
+                        height: 48,
+                        boxShadow: 'none'
                     }),
                 }),
             },
