@@ -13,8 +13,15 @@ export default function GlobalCssOverride() {
             },
             '@media (min-width: 992px)': {
                 h4: { fontSize: '18px' },
-            }
+            },
 
+            // a: {
+            //     fontWeight: 400,
+            //     fontSize: 14,
+            //     lineHeight: '22px',
+            //     textDecorationLine: 'underline',
+            //     color: '#131313',
+            // }
         }}
     />;
 
