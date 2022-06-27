@@ -29,18 +29,18 @@ export default function CreatePostModal() {
   }, [data, dispatch, onClose]);
 
   const body = (
-    <div  id='simple-modal-title'>
+    <div id='simple-modal-title'>
       <h2>Create New Post</h2>
       <form noValidate autoComplete='off'>
         <TextField
-        
+
           required
           label='Title'
           value={data.title}
           onChange={(e) => setData({ ...data, title: e.target.value })}
         />
         <TextareaAutosize
-        
+
           rowsMin={10}
           rowsMax={15}
           placeholder='Content...'
