@@ -5,7 +5,7 @@ import "@fontsource/lato";
 let theme = createTheme({
     palette: {
         primary: {
-            main: purple[500],
+            main: '#131313',
         },
         secondary: {
             main: green[500],
