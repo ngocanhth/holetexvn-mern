@@ -18,7 +18,7 @@ coverage
 .openzeppelin/*.json
 
 mern-app-client/
-mern-app-server/node_modules
+mern-app-server/
 
 client/node_modules
 server/node_modules
