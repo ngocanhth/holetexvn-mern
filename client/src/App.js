@@ -17,7 +17,7 @@ function App() {
   dispatch(actions.getPosts.getPostsRequest());
 
   return (
-    <Container className="container" maxWidth='lg1280' disableGutters = 'true' >
+    <Container className="container" maxWidth='lg1280' disableGutters = {true} >
       <GlobalCssOverride />
       <Header />
       <HomePage></HomePage>
